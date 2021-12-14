@@ -59,14 +59,16 @@ public class Main {
         }
     }
 
-    public void start() {
+    public void launch() {
         System.out.printf("Server running at: port=%d docRoot=%s%n", this.port, this.docRoot);
+        HttpServer webServer = new HttpServer(this.port, this.docRoot);
+        webServer.start();
     }
 
 
     public static void main(String[] args) {
-        Main server = new Main(args);
+        Main main = new Main(args);
 
-        server.start();
+        main.launch();
     }
 }
