@@ -23,7 +23,7 @@ public class HttpServer {
         this.docRoot = docRoot;
     }
 
-    private boolean checkDocPaths() {
+    public boolean checkDocPaths() {
         String[] paths = this.docRoot.split(":");
         boolean allPathsReadable = true;
         for (String path : paths) {
