@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>About</title>
+</head>
+<body>
+    <article class="about">
+        <h1>About This Project</h1>
+        <p>This project is implemented in Java programming language.
+            It creates a simple web server that responds to client browser
+            requests.
+        </p>
+        <p>As this is a simple web server, the responses it can handle are limited to:</p>
+        <section class="details">
+            <ol>
+                <li>405 Method Not Allowed</li>
+                    <ul>
+                        <li>Only <span class="monospace bold">HTTP GET</span> requests are supported</li>
+                    </ul>
+                <li>404 Not Found</li>
+                <ul>
+                    <li>If the file resource is not found, server sends this response</li>
+                </ul>
+                <li>200 OK</li>
+                <ul>
+                    <li>If the file resource is found, the server sends this response and the content of the requested file as bytes</li>
+                </ul>
+                <li>200 OK (with Content-Type for png file)</li>
+                <ul>
+                    <li>If the file resource is found and is a PNG file, the server sends this response with Content-Type set to image/png and sends the contents of the PNG file as bytes</li>
+                </ul>
+            </ol>
+        </section>
+        <p class="center"><a href="./">Click here to go back to the homepage</a></p>
+    </article>
+</body>
+</html>
