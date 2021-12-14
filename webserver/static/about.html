@@ -19,19 +19,19 @@
             <ol>
                 <li>405 Method Not Allowed</li>
                     <ul>
-                        <li>Only <span class="monospace bold">HTTP GET</span> requests are supported</li>
+                        <li>Only <span class="monospace bold">HTTP GET</span> requests are supported. If other methods are requested, server sends this response.</li>
                     </ul>
                 <li>404 Not Found</li>
                 <ul>
-                    <li>If the file resource is not found, server sends this response</li>
+                    <li>If the file resource is not found, server sends this response.</li>
                 </ul>
                 <li>200 OK</li>
                 <ul>
-                    <li>If the file resource is found, the server sends this response and the content of the requested file as bytes</li>
+                    <li>If the file resource is found, the server sends this response and the content of the requested file as bytes.</li>
                 </ul>
                 <li>200 OK (with Content-Type for png file)</li>
                 <ul>
-                    <li>If the file resource is found and is a PNG file, the server sends this response with Content-Type set to image/png and sends the contents of the PNG file as bytes</li>
+                    <li>If the file resource is found and is a PNG file, the server sends this response with Content-Type set to image/png and sends the contents of the PNG file as bytes.</li>
                 </ul>
             </ol>
         </section>
