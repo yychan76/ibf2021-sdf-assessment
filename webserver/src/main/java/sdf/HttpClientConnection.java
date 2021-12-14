@@ -115,6 +115,7 @@ public class HttpClientConnection implements Runnable {
 
     private void sendMethodNotAllowedResponse(String method) {
         try {
+            System.out.printf("Sending %s to client%n", METHOD_NOT_ALLOWED_HEADER);
             this.writer.writeString(METHOD_NOT_ALLOWED_HEADER);
             this.writer.writeString(); // empty line
             this.writer.writeString(String.format("%s not supported", method));
@@ -125,6 +126,7 @@ public class HttpClientConnection implements Runnable {
 
     private void sendResourceNotFoundResponse(String resource) {
         try {
+            System.out.printf("Sending %s to client%n", RESOURCE_NOT_FOUND_HEADER);
             this.writer.writeString(RESOURCE_NOT_FOUND_HEADER);
             this.writer.writeString(); // empty line
             this.writer.writeString(String.format("%s not found", resource));
