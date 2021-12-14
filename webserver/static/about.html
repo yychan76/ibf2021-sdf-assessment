@@ -10,12 +10,18 @@
 <body>
     <article class="about">
         <h1>About This Project</h1>
-        <p>This project is implemented in Java programming language.
-            It creates a simple web server that responds to client browser
-            requests.
-        </p>
-        <p>As this is a simple web server, the responses it can handle are limited to:</p>
+        <section>
+            <p>This project is implemented in Java programming language.
+                It creates a simple web server that responds to client browser
+                requests.
+            </p>
+            <h2>Usage</h2>
+
+            <p>Launch the web server with <span class="monospace bold">java -jar webserver.jar --port 8080 --docRoot yourfolder:youraltfolder</span> </p>
+        </section>
+
         <section class="details">
+            <p>As this is a simple web server, the responses it can handle are limited to:</p>
             <ol>
                 <li>405 Method Not Allowed</li>
                     <ul>
