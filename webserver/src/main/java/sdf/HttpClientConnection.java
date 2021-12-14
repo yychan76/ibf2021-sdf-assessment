@@ -102,10 +102,10 @@ public class HttpClientConnection implements Runnable {
         try {
             System.out.printf("Sending %sresource %s to client%n", isPng ? "png image " : "", resourceFile.getAbsolutePath());
             this.writer.writeString(OK_RESPONSE_HEADER);
-            this.writer.writeString(); // empty line
             if (isPng) {
                 this.writer.writeString(PNG_CONTENT_TYPE_HEADER);
             }
+            this.writer.writeString(); // empty line
             byte[] content = Files.readAllBytes(resourceFile.toPath());
             this.writer.writeBytes(content);
         } catch (Exception e) {
