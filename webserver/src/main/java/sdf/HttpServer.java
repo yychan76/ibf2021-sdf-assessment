@@ -49,6 +49,7 @@ public class HttpServer {
 
     public void start() {
         System.out.println("Starting HttpServer...");
+        System.out.printf("Visit http://localhost:%d in your browser%n", this.port);
         try {
             this.serverSocket = new ServerSocket(this.port);
         } catch (IOException e) {
