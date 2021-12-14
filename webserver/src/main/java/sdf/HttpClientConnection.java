@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 public class HttpClientConnection implements Runnable {
@@ -64,26 +65,17 @@ public class HttpClientConnection implements Runnable {
 
     private void getResource(String resource) {
         System.out.printf("Client requested: %s%n", resource);
-        File resourceFile;
         if ("/".equals(resource)) {
             resource = DEFAULT_PAGE_RESOURCE;
         }
-        resourceFile = new File(resource);
         for (Path docPath : docPaths) {
-            File directory = docPath.toFile();
-            File[] files = directory.listFiles();
-            if (files == null) {
-                continue;
-            }
-            for (File file : files) {
-                System.out.println(file.getName().toString());
-                if (file.getName().equals(resourceFile.getName())) {
-                    try {
-                        sendOkResourceResponse(file);
-                        return;
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+            File resourceFile= Paths.get(docPath.toString(), resource).toFile();
+            if (resourceFile.isFile()) {
+                try {
+                    sendOkResourceResponse(resourceFile);
+                    return;
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
         }
